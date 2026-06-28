@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: black;
+  color: #00fff7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #00fff7, transparent);
+  opacity: 0.05;
+  animation: move 6s linear infinite;
+}
+
+@keyframes move {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.container {
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 0 0 20px #00fff7;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.card {
+  background: #111;
+  padding: 15px;
+  border: 1px solid #00fff7;
+  box-shadow: 0 0 20px #00fff7;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 40%;
+  padding: 10px;
+  margin: 5px;
+  background: black;
+  border: 1px solid #ff00ff;
+  color: white;
+}
+
+button {
+  padding: 10px;
+  margin-left: 10px;
+  background: black;
+  color: #00fff7;
+  border: 1px solid #00fff7;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #00fff7;
+  color: black;
+  box-shadow: 0 0 20px #00fff7;
+  transform: scale(1.1);
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #111;
+  border-left: 3px solid #ff00ff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.todo:hover {
+  box-shadow: 0 0 20px #ff00ff;
+  transform: scale(1.02);
+}
+
+.glow {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #00fff7; }
+  to { box-shadow: 0 0 30px #00fff7; }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.delete {
+  border-color: red;
+  color: red;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #00fff7;
+  box-shadow: 0 0 15px #00fff7;
+  background: #111;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+  border-top: 1px solid #00fff7;
+}
